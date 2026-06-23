@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アガリバ｜その製造経験、エンジニアとして生きる。（無料）</title>
+<meta name="description" content="製造経験は、エンジニアへの切符。機械エンジニア→設計・開発、ITエンジニアへも。働きながら市場価値を上げる。製造経験1年〜の20〜30代へ。求職者は完全無料。">
+<!-- ★差し替え：CTAの href="#LINE"（全箇所）をアガリバ公式LINE URLへ／ヒーロー写真は任意でimg/hero.jpg／求人カードは実データへ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E2A47;        /* 深い濃紺＝主役のインク */
+  --blue:#1B4D8A;       /* 中間ブルー */
+  --lime:#C6F24E;       /* 主役のライム（上昇） */
+  --paper:#F1F5F4;      /* 涼しい紙の地 */
+  --line:#D6DFDC;
+  --muted:#5B6B73;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.disp{font-family:'Dela Gothic One',sans-serif;font-weight:400;line-height:1.34;letter-spacing:.01em}
+/* 改行の孤立文字（1文字だけ下がる）を自動で防ぐ */
+h1,h2,.h2,.disp{text-wrap:balance}
+p,.lead,.worry .tx p,.step p,.case .story,.p p,.job .cat{text-wrap:pretty}
+/* スマホだけ効く改行（PCは無効） */
+.spbr{display:none}
+@media(max-width:760px){.spbr{display:inline}}
+.wrap{width:100%;max-width:960px;margin:0 auto;padding:0 22px}
+.tight{max-width:760px}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* 署名：「上がる」がライムの受け皿に乗って上がる */
+.fit{display:inline-block;background:var(--lime);color:var(--ink);padding:.02em .28em;border-radius:.18em;box-shadow:6px 6px 0 rgba(14,42,71,.22);transform:rotate(-1.5deg)}
+
+/* CTA：ライムの塊＋ハードシャドウ */
+.btn{display:inline-flex;align-items:center;gap:.6em;background:var(--lime);color:var(--ink);font-family:'Dela Gothic One',sans-serif;font-size:1.02rem;padding:18px 30px;border-radius:14px;box-shadow:5px 5px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.btn .free{font-family:'Noto Sans JP';font-weight:700;font-size:.72rem;background:var(--ink);color:var(--lime);padding:3px 9px;border-radius:99px}
+.note{font-size:.78rem;color:var(--muted);margin-top:12px}
+
+section{padding:84px 0;position:relative}
+.eyebrow{font-family:'Dela Gothic One';font-size:.74rem;letter-spacing:.18em;color:var(--blue);margin-bottom:14px}
+.h2{font-size:clamp(1.6rem,6vw,2.4rem)}
+
+/* ---------- HERO（写真なしでも成立する濃紺グラデ） ---------- */
+.hero{background:radial-gradient(120% 90% at 85% 0%,rgba(27,77,138,.9) 0%,rgba(14,42,71,1) 60%),var(--ink);color:var(--paper);padding:26px 0 80px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;opacity:.5}
+.hero-bg picture{display:contents}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:right center}
+.hero-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(95deg,rgba(14,42,71,.95) 0%,rgba(14,42,71,.78) 40%,rgba(14,42,71,.32) 100%)}
+.hero::after{content:"";position:absolute;right:-60px;top:-60px;width:340px;height:340px;background:radial-gradient(circle,rgba(198,242,78,.18),transparent 70%);z-index:1}
+.hero .wrap{position:relative;z-index:2}
+@media(max-width:760px){
+  .hero-shade{background:linear-gradient(180deg,rgba(14,42,71,.7) 0%,rgba(14,42,71,.45) 40%,rgba(14,42,71,.82) 100%)}
+  .hero-bg img{object-position:center top}
+  .hero{padding-bottom:64px}
+}
+.hero .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:54px}
+.hero .logo{font-family:'Dela Gothic One';font-size:1.15rem;letter-spacing:.06em;display:flex;align-items:center;gap:.4em}
+.hero .logo .b{display:inline-grid;place-items:center;width:30px;height:30px;background:var(--lime);color:var(--ink);border-radius:8px;font-size:.82rem;transform:rotate(-4deg)}
+.hero h1{font-size:clamp(2rem,9vw,3.7rem);margin-bottom:24px}
+.hero h1 .sm{display:block;font-size:.42em;color:var(--lime);margin-bottom:.5em;letter-spacing:.02em}
+.hero .lead{font-size:clamp(.98rem,3.6vw,1.12rem);max-width:31em;margin-bottom:30px;color:rgba(241,245,244,.88)}
+.hero .row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-family:'Dela Gothic One';font-size:.78rem}
+.hero .row span{border:2px solid rgba(198,242,78,.5);color:var(--lime);padding:7px 14px;border-radius:99px}
+.hero .ctarow{margin:34px 0 0}
+
+/* ---------- 共感（C：図星フック） ---------- */
+.empathy{background:var(--paper)}
+.worries{border-top:3px solid var(--ink);margin:30px 0 44px}
+.worry{display:flex;gap:18px;align-items:baseline;padding:22px 4px;border-bottom:1px solid var(--line)}
+.worry .no{font-family:'Dela Gothic One';color:var(--lime);-webkit-text-stroke:1.4px var(--blue);font-size:1.5rem;flex:0 0 1.6em}
+.worry .tx b{font-family:'Dela Gothic One';font-weight:400;font-size:1.06rem;display:block;margin-bottom:2px}
+.worry .tx p{font-size:.86rem;color:var(--muted)}
+.kicker{background:var(--ink);color:var(--paper);border-radius:20px;padding:40px 28px;text-align:center;box-shadow:8px 8px 0 var(--lime)}
+.kicker .s{font-family:'Dela Gothic One';color:var(--lime);font-size:.84rem;letter-spacing:.1em;display:block;margin-bottom:12px}
+.kicker .big{font-family:'Dela Gothic One';font-size:clamp(1rem,3.9vw,1.55rem);line-height:1.75}
+
+/* ---------- 現場で上げる3つの道 ---------- */
+.flow{background:var(--blue);color:var(--paper)}
+.flow .eyebrow{color:var(--lime)}
+.steps{display:grid;gap:16px}
+@media(min-width:780px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:30px 24px}
+.step .n{font-family:'Dela Gothic One';font-size:2.4rem;color:var(--lime);line-height:1}
+.step h3{font-family:'Dela Gothic One';font-weight:400;font-size:1.1rem;margin:14px 0 8px}
+.step p{font-size:.86rem;color:rgba(241,245,244,.82)}
+.honest{margin-top:34px;text-align:center;font-family:'Dela Gothic One';font-size:clamp(.95rem,3.6vw,1.08rem);color:var(--lime)}
+
+/* ---------- 求人カード（見やすい求人票＝Instagramストーリー連動） ---------- */
+.jobs{background:var(--paper)}
+.jobs .h2{margin-bottom:8px}
+.jobs .sub{color:var(--muted);font-size:.9rem;margin-bottom:30px}
+.job-grid{display:grid;gap:18px}
+@media(min-width:820px){.job-grid{grid-template-columns:repeat(3,1fr)}}
+.job{background:#fff;border:2px solid var(--ink);border-radius:18px;padding:22px 20px;box-shadow:5px 5px 0 var(--ink);display:flex;flex-direction:column}
+.job .cat{font-family:'Dela Gothic One';font-weight:400;font-size:1.04rem;line-height:1.4}
+.job .pay{font-family:'Dela Gothic One';margin:14px 0 6px;color:var(--blue);display:flex;align-items:baseline;gap:6px}
+.job .pay .big{font-size:1.9rem}
+.job .pay .big small{font-size:.46em}
+.job .chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 14px}
+.job .chips span{font-size:.72rem;background:var(--paper);border:1px solid var(--line);border-radius:99px;padding:4px 10px;font-weight:700}
+.job .push{margin-top:auto;background:var(--ink);color:var(--lime);font-family:'Dela Gothic One';font-size:.78rem;border-radius:10px;padding:9px 12px;text-align:center;line-height:1.5}
+.jobs .disc{text-align:center;font-size:.74rem;color:var(--muted);margin-top:22px}
+
+/* ---------- 実例 ---------- */
+.cases .h2{margin-bottom:34px}
+.case-grid{display:grid;gap:18px}
+@media(min-width:820px){.case-grid{grid-template-columns:repeat(3,1fr)}}
+.case{background:#fff;border:2px solid var(--ink);border-radius:18px;padding:26px 22px;box-shadow:5px 5px 0 var(--ink)}
+.case .who{font-family:'Dela Gothic One';font-weight:400;font-size:1.02rem}
+.case .who small{display:block;font-family:'Noto Sans JP';font-weight:700;font-size:.76rem;color:var(--blue);margin-top:2px}
+.ba{margin:18px 0;padding:16px;background:var(--paper);border-radius:12px;text-align:center}
+.ba .lab{font-size:.7rem;letter-spacing:.12em;color:var(--muted);font-weight:700;margin-bottom:6px}
+.ba .num{font-family:'Dela Gothic One';display:flex;align-items:baseline;justify-content:center;gap:8px}
+.ba .bf{font-size:1rem;color:#9fb0b8;text-decoration:line-through}
+.ba .af{font-size:1.9rem;color:var(--blue)}
+.ba .af small{font-size:.5em}
+.ba .arr{color:var(--lime);-webkit-text-stroke:1px var(--blue)}
+.ba.alt .af{font-size:1.1rem;line-height:1.4}
+.tag{display:inline-block;margin-top:10px;background:var(--lime);color:var(--ink);font-family:'Dela Gothic One';font-size:.72rem;padding:4px 12px;border-radius:99px}
+.case .story{font-size:.84rem;color:var(--muted);margin-top:6px}
+.disc{text-align:center;font-size:.74rem;color:var(--muted);margin-top:24px}
+
+/* ---------- 約束 ---------- */
+.promise{background:var(--ink);color:var(--paper)}
+.promise .eyebrow{color:var(--lime)}
+.plist{display:grid;gap:16px}
+@media(min-width:780px){.plist{grid-template-columns:repeat(3,1fr)}}
+.p{border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:28px 24px}
+.p h3{font-family:'Dela Gothic One';font-weight:400;color:var(--lime);font-size:1.06rem;line-height:1.5;margin-bottom:10px}
+.p p{font-size:.86rem;color:rgba(241,245,244,.8)}
+
+/* ---------- 最終CTA ---------- */
+.final{background:var(--lime);color:var(--ink);text-align:center}
+.final .free{display:inline-block;background:var(--ink);color:var(--lime);font-family:'Dela Gothic One';font-size:.78rem;padding:7px 18px;border-radius:99px;margin-bottom:22px}
+.final h2{font-family:'Dela Gothic One';font-weight:400;font-size:clamp(1.15rem,4.6vw,2.1rem);line-height:1.6;margin-bottom:30px}
+.final .btn{background:var(--ink);color:var(--lime);box-shadow:5px 5px 0 rgba(14,42,71,.35)}
+.final .btn .free{background:var(--lime);color:var(--ink)}
+.final .note{color:rgba(14,42,71,.65)}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:rgba(241,245,244,.6);font-size:.78rem;padding:46px 0 120px;line-height:2.1}
+footer .fb{font-family:'Dela Gothic One';color:var(--paper);font-size:1.05rem;margin-bottom:12px}
+footer a{color:var(--lime)}
+@media(min-width:768px){footer{padding-bottom:46px}}
+
+/* ---------- sticky ---------- */
+.sticky{position:fixed;left:14px;right:14px;bottom:14px;z-index:50;transform:translateY(140%);transition:transform .3s}
+.sticky.on{transform:none}
+.sticky .btn{width:100%;justify-content:center;font-size:.95rem}
+@media(min-width:768px){.sticky{display:none}}
+
+/* ---------- ロゴ画像 ---------- */
+.logomark{height:34px;width:auto;border-radius:8px;display:block}
+.ava{width:58px;height:58px;border-radius:50%;overflow:hidden;flex:0 0 58px;background:var(--blue);border:3px solid var(--lime);display:grid;place-items:center;color:var(--lime);font-family:'Dela Gothic One';font-size:1.1rem}
+.ava img{width:100%;height:100%;object-fit:cover}
+.who-row{display:flex;align-items:center;gap:14px;margin-bottom:4px}
+
+/* ---------- motion ---------- */
+.up{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.up{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- HERO（A：前向き・上昇） -->
+<header class="hero">
+  <div class="hero-bg"><picture><source media="(max-width:760px)" srcset="img/hero-mobile.jpg"><img src="img/hero.jpg" alt="" onerror="this.closest('.hero-bg').style.display='none'"></picture></div>
+  <div class="hero-shade"></div>
+  <div class="wrap">
+    <div class="top">
+      <span class="logo"><img class="logomark" src="img/logo.png" alt="アガリバ" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'b',textContent:'ア'}))">アガリバ</span>
+    </div>
+    <h1 class="disp up in">
+      <span class="sm">その製造経験、ムダにしてない？</span>
+      あなたが<br><span class="fit">上がる</span>場所へ。
+    </h1>
+    <p class="lead up in">ライン作業の経験は、エンジニアへの切符。<br>機械設計エンジニア、ITエンジニアへも。<br>働きながら、市場価値を上げていく。</p>
+    <div class="row up in">
+      <span>製造経験1年〜</span><span>完全無料</span><span>働きながら学べる</span>
+    </div>
+    <div class="ctarow up in">
+      <a class="btn" href="#LINE">製造キャリア診断<span class="free">無料</span></a>
+      <p class="note" style="color:rgba(241,245,244,.7)">※求職者の方は完全無料です（公式LINEから）</p>
+    </div>
+  </div>
+</header>
+
+<!-- 共感（C：図星フック） -->
+<section class="empathy">
+  <div class="wrap tight">
+    <div class="eyebrow up">こんな気持ち、ない？</div>
+    <h2 class="h2 disp up">ひとつでも当てはまったら、<br>読み進めてみて。</h2>
+    <div class="worries up">
+      <div class="worry"><span class="no">01</span><div class="tx"><b>このまま5年、何が残る？</b><p>同じライン作業の繰り返し。<br class="spbr">スキルがつく実感がない。</p></div></div>
+      <div class="worry"><span class="no">02</span><div class="tx"><b>昇進・キャリアの道が見えない</b><p>上がっていく未来図が描けない。気づけば時間だけ過ぎていく。</p></div></div>
+      <div class="worry"><span class="no">03</span><div class="tx"><b>頑張ってるのに給料が上がらない</b><p>夜勤も残業もこなしてるのに、手取りはずっと横ばい。</p></div></div>
+      <div class="worry"><span class="no">04</span><div class="tx"><b>派遣・期間工のまま終わりたくない</b><p>正社員になりたいけど、<br class="spbr">どう動けばいいか分からない。</p></div></div>
+    </div>
+    <div class="kicker up">
+      <span class="s">だいじょうぶ。</span>
+      <span class="big">それ、あなたがダメなんじゃない。<br>まだ<span style="color:var(--lime)">“上がれる現場”</span>に<br class="spbr">出会ってないだけ。</span>
+    </div>
+  </div>
+</section>
+
+<!-- 現場で上げる3つの道 -->
+<section class="flow">
+  <div class="wrap">
+    <div class="eyebrow up">3 WAYS UP</div>
+    <h2 class="h2 disp up">製造経験が“生きる”、<br>3つの道。</h2>
+    <div class="steps">
+      <div class="step up"><div class="n">01</div><h3>もっと良い現場へ</h3><p>ホワイト工場・大手正社員・好条件。今の経験を活かして、環境ごと上げる。</p></div>
+      <div class="step up"><div class="n">02</div><h3>機械エンジニアへ</h3><p>製造経験を武器に、機械製造エンジニア→設計・開発へ。ものづくりを極める道。</p></div>
+      <div class="step up"><div class="n">03</div><h3>ITエンジニア等へ</h3><p>働きながら学んで職種転換。会社の学習・資格補助で、市場価値を一気に上げる。</p></div>
+    </div>
+    <p class="honest up">あなたの経験は、ムダじゃない。<br class="spbr">極める道も、広げる道も、選べる。</p>
+  </div>
+</section>
+
+<!-- 求人カード（見やすい求人票＝Instagramストーリー連動／※サンプル） -->
+<section class="jobs">
+  <div class="wrap">
+    <div class="eyebrow up">JOBS</div>
+    <h2 class="h2 disp up">あなたの経験が<br class="spbr">活きる求人、あります。</h2>
+    <div class="job-grid">
+      <div class="job up">
+        <p class="cat">機械製造エンジニア（未経験から）</p>
+        <div class="pay"><span class="big">月28<small>万〜</small></span></div>
+        <div class="chips"><span>正社員</span><span>社宅用意</span><span>年間休日125日</span><span>土日休み</span><span>製造経験が活きる</span></div>
+        <div class="push">大手メーカー／設計・開発への道</div>
+      </div>
+      <div class="job up">
+        <p class="cat">機械設計アシスタント</p>
+        <div class="pay"><span class="big">年収380<small>万〜480万</small></span></div>
+        <div class="chips"><span>CAD学習支援</span><span>土日休み</span><span>転勤なし</span><span>キャリアUP</span></div>
+        <div class="push">ものづくりを極める／設計・開発へ</div>
+      </div>
+      <div class="job up">
+        <p class="cat">ITエンジニア（社内研修あり）</p>
+        <div class="pay"><span class="big">月25<small>万〜</small></span><span style="font-size:.8rem;color:var(--muted)">＋賞与年2回</span></div>
+        <div class="chips"><span>どこでも学べるオンライン教育ツール</span><span>資格受験料補助</span><span>未経験から職種転換</span></div>
+        <div class="push">製造→ITへ／市場価値を一気に</div>
+      </div>
+    </div>
+    <p class="disc">※条件は求人により異なります。最新の求人は公式LINEでご案内します。</p>
+  </div>
+</section>
+
+<!-- 実例 -->
+<section class="cases">
+  <div class="wrap">
+    <div class="eyebrow up">VOICE</div>
+    <h2 class="h2 disp up">経験を活かして、<br>上がった人たち。</h2>
+    <div class="case-grid">
+      <div class="case up">
+        <div class="who-row"><div class="ava"><img src="img/case-t.jpg" alt="" onerror="this.parentNode.textContent='T'"></div><p class="who">T太さん<small>24歳・派遣の組立</small></p></div>
+        <div class="ba"><div class="lab">年収</div><div class="num"><span class="bf">290万</span><span class="arr">▶</span><span class="af">390<small>万</small></span></div><span class="tag">機械エンジニアへ</span></div>
+        <p class="story">「自分には現場しかない」と思ってた。<br class="spbr">製造経験を活かして、正社員のエンジニアに。</p>
+      </div>
+      <div class="case up">
+        <div class="who-row"><div class="ava"><img src="img/case-k.jpg" alt="" onerror="this.parentNode.textContent='K'"></div><p class="who">K介さん<small>27歳・ライン作業</small></p></div>
+        <div class="ba"><div class="lab">年収</div><div class="num"><span class="bf">350万</span><span class="arr">▶</span><span class="af">450<small>万</small></span></div><span class="tag">機械設計へ</span></div>
+        <p class="story">機械製造エンジニアから設計へ。ものづくりを極める道で、市場価値が上がった。</p>
+      </div>
+      <div class="case up">
+        <div class="who-row"><div class="ava"><img src="img/case-y.jpg" alt="" onerror="this.parentNode.textContent='Y'"></div><p class="who">Y斗さん<small>23歳・検査</small></p></div>
+        <div class="ba alt"><div class="lab">職種転換</div><div class="num"><span class="af">製造→<br>ITエンジニア</span></div><span class="tag">働きながら学習</span></div>
+        <p class="story">給料をもらいながらIT学習。会社の補助を使って、ITエンジニアへチャレンジ。</p>
+      </div>
+    </div>
+    <p class="disc">※個人の実績です。成果には個人差があります。</p>
+  </div>
+</section>
+
+<!-- 約束 -->
+<section class="promise">
+  <div class="wrap">
+    <div class="eyebrow up">PROMISE</div>
+    <h2 class="h2 disp up">アガリバの約束</h2>
+    <div class="plist">
+      <div class="p up"><h3>あなたの経験を、<br>武器にする。</h3><p>製造の経験は、ちゃんと価値になる。ゼロ扱いせず、活かせる現場を探す。</p></div>
+      <div class="p up"><h3>あなたが、選べる。</h3><p>極める道も、広げる道も。押し付けず、あなたの“上がり方”を一緒に決める。</p></div>
+      <div class="p up"><h3>甘やかさない。<br>でも、見捨てない。</h3><p>現実も正直に伝える。そのうえで、最後まで一緒に勝ち筋を考える。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 最終CTA -->
+<section class="final">
+  <div class="wrap tight">
+    <span class="free up">求職者は完全無料</span>
+    <h2 class="up">まずは3分の診断から。<br>あなたの“上がり方”、見つけよう。</h2>
+    <div class="up">
+      <a class="btn" href="#LINE">製造キャリア診断<span class="free">LINE</span></a>
+      <p class="note">※求職者の方は完全無料です</p>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer>
+  <div class="wrap">
+    <p class="fb">アガリバ</p>
+    <p>有料職業紹介事業 許可番号：13-ユ-318181</p>
+    <p>運営：株式会社Talenteam（東京都渋谷区渋谷2-12-4 ネクストサイトビル5階）</p>
+    <p>お問い合わせ：<a href="mailto:agariba@talenteam.jp">agariba@talenteam.jp</a></p>
+    <p><a href="privacy.html">プライバシーポリシー</a></p>
+    <p style="margin-top:12px;opacity:.6">&copy; 2026 Talenteam Inc.</p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky"><a class="btn" href="#LINE">製造キャリア診断<span class="free">無料</span></a></div>
+
+<script>
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14});
+document.querySelectorAll('.up').forEach(el=>io.observe(el));
+const sticky=document.getElementById('sticky'),hero=document.querySelector('.hero'),final=document.querySelector('.final');
+addEventListener('scroll',()=>{const hb=hero.getBoundingClientRect().bottom,ft=final.getBoundingClientRect().top;sticky.classList.toggle('on',hb<0&&ft>innerHeight*.7)},{passive:true});
+</script>
+</body>
+</html>
